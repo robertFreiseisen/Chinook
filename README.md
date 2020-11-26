@@ -1,11 +1,11 @@
 # Chinook
-Chinook ist ein Media-Store mit dem Ziel, seinen Kunden den bestmöglichen Service zu bieten. Um die Dienste an den Kunden entsprechend anzupassen, benötigt die Marketing Abteilung Informationen. Das bestehende System 
+Chinook ist ein Media-Store mit dem Ziel, seinen Kunden den bestmÃ¶glichen Service zu bieten. Um die Dienste an den Kunden entsprechend anzupassen, benÃ¶tigt die Marketing Abteilung Informationen. Das bestehende System 
 beinhaltet die Stammdaten und Bewegungsdaten aus der Vergangenheit. 
 Betrachten wir nun folgendes Datenmodel:
 ![Models](Models.png)
 
 ## Anforderungen
-Die Marketing Abteilung benötigt für ihre nächsten Aktivitäten folgende Informationen aus den Datenbeständen:
+Die Marketing Abteilung benÃ¶tigt fÃ¼r ihre nÃ¤chsten AktivitÃ¤ten folgende Informationen aus den DatenbestÃ¤nden:
 * Track-Zeit-Auswertung
   * Track mit Maximalzeit [sec]
   * Track mit Minimalzeit [sec]
@@ -15,16 +15,16 @@ Die Marketing Abteilung benötigt für ihre nächsten Aktivitäten folgende Informat
   * Album mit Minimalzeit [sec]
   * Durchschnittszeit [sec]
 * Track-Verkauf-Auswertung
-  * Track mit der höchsten Verkaufszahl
+  * Track mit der hÃ¶chsten Verkaufszahl
   * Track mit der minimalen Verkaufszahl
-  * Track mit dem höchsten Umsatz
+  * Track mit dem hÃ¶chsten Umsatz
   * Track mit dem geringsten Umsatz
   * Kunden-Auswertung
-  * Kunde mit höchsten Umsatz
+  * Kunde mit hÃ¶chsten Umsatz
   * Kunde mit geringstem Umsatz
   * Durchschnittsumsatz
 * Genre-Verkauf-Auswertung
-  * Genre mit der höchsten Verkaufszahl
+  * Genre mit der hÃ¶chsten Verkaufszahl
   * Genre mit der minimalen Verkaufszahl
 
-Die Auswertung erfolgt in einer einfachen Konsolenanwendung
+_Die Auswertung erfolgt in einer einfachen Konsolenanwendung_
