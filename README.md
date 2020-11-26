@@ -4,9 +4,6 @@ beinhaltet die Stammdaten und Bewegungsdaten aus der Vergangenheit.
 Betrachten wir nun folgendes Datenmodel:
 ![Models](Models.png)
 
-
-
-| a | | |
 ## Anforderungen
 Die Marketing Abteilung benötigt für ihre nächsten Aktivitäten folgende Informationen aus den Datenbeständen:
 * Track-Zeit-Auswertung
