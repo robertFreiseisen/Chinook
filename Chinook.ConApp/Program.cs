@@ -11,7 +11,7 @@ namespace Chinook.ConApp
 			Console.WriteLine("x Robert Freiseisen   x");
 			Console.WriteLine(new string('x', 23));
 
-            #region TrackTime
+/*#region TrackTime
             var (avg, longest, shortest) = Report.MarketingReports.GetTrackTimes();
 
 			Console.WriteLine("Track-Zeit-Auswertung");
@@ -60,7 +60,7 @@ namespace Chinook.ConApp
 			#endregion
 
 			Console.WriteLine("Press any key to continue ...");
-			Console.ReadKey();
+			Console.ReadKey();*/
 		}
 	}
 }

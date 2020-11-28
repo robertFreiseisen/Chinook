@@ -15,25 +15,25 @@ namespace Chinook.Report
 		private static IEnumerable<ICustomer> customers = Logic.Factory.GetAllCustomers();
 		private static IEnumerable<IGenre> genres = Logic.Factory.GetAllGenres();
 
-		public static IEnumerable<IArtistStatistic> GetArtistStatistics()
-		{
-			var artists = Logic.Factory.GetAllArtists();
+		public static IEnumerable<ITrackTime>  GetTrackTimes()
+        {
+			var longest = tracks.Aggregate((a, b) => a.Miliseconds > b.Miliseconds ? a : b);
+			double avg = tracks.Average(c => c.Miliseconds);
+			var shortest = tracks.Aggregate((a, b) => a.Miliseconds < b.Miliseconds ? a : b);
 
-			// Abfrage 
-			var result = default(IEnumerable<IArtistStatistic>);
+			var result = new List<TrackTime>()
+			{
+				new TrackTime() {Name = "AVG", Seconds = (int) avg / 1000 },
+				new TrackTime() { Name = longest.Name, Seconds = longest.Miliseconds / 1000 },
+				new TrackTime() { Name = shortest.Name, Seconds = shortest.Miliseconds / 1000 }
+
+
+			};
 
 			return result;
-		}
-
-		public static (double avg, ITrackTime longest, ITrackTime shortest) GetTrackTimes()
-        {
-			ITrack longest = tracks.Aggregate((a, b) => a.Miliseconds > b.Miliseconds ? a : b);
-			double avg = tracks.Average(c => c.Miliseconds);
-			ITrack shortest = tracks.Aggregate((a, b) => a.Miliseconds < b.Miliseconds ? a : b);
-			return (avg, new TrackTime() { Name = longest.Name, Seconds = longest.Miliseconds / 1000 }, new TrackTime() { Name = shortest.Name, Seconds = shortest.Miliseconds / 1000 });
         }
 
-		public static (double avg, IAlbumTime longest, IAlbumTime shortest) GetAlbumTime()
+		public static IEnumerable<IAlbumTime> GetAlbumTime()
         {
 			var new_tracks = (from pl in tracks
 							  group pl by pl.AlbumId into trackGroup
@@ -49,7 +49,14 @@ namespace Chinook.Report
 			IAlbum last = albums.ToList().Find(a => a.Id == l.AlbumId);
 			double avg = new_tracks.Average(c => c.TotalTime);
 
-			return (avg, new AlbumTime() { Name = top.Title, Seconds = t.TotalTime }, new AlbumTime() { Name = last.Title, Seconds = l.TotalTime});
+			var result = new List<IAlbumTime>()
+			{
+				new AlbumTime() {Name = "AVG", Seconds = (int) avg / 1000},
+				new AlbumTime() { Name = top.Title, Seconds = t.TotalTime },
+				new AlbumTime() { Name = last.Title, Seconds = l.TotalTime}
+
+			};
+			return result;
         }
 
 		public static ITrackSales GetTrackSales()

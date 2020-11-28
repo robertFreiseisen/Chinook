@@ -1,4 +1,8 @@
-﻿namespace Chinook.Report.Marketing.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Chinook.Report.Marketing.Models
 {
 	internal class ItemSecondary<T> : Contracts.Report.Marketing.IItemSecondary<T>
 	{
